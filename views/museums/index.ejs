@@ -1,0 +1,54 @@
+<% include ../partials/header %>
+
+    <% if(currentUser && currentUser.isAdmin){ %>
+        <h1>You're an Admin</h1>
+        <% } %>
+
+            <header class="jumbotron">
+                <div class="container">
+                    <h1>Use Museum Finder to research your next visit</h1>
+                    <p>Check out the best museums picked by our users</p>
+                    <p>
+                        <a class="btn btn-primary btn-lg" href="/museums/new">Add New Museum</a>
+                    </p>
+                </div>
+            </header>
+
+            <div class="row text-center" style="display:flex; flex-wrap: wrap">
+                <div class="col-md-12">
+                    <% if(noMatch !== null){ %>
+                        <h3>
+                            <%= noMatch %>
+                        </h3>
+                        <p>
+                            <form action="/museums" method="GET" class="form-inline">
+                                <div class="form-group">
+                                    <input type="text" name="search" placeholder="Museum search..." class="form-control" />
+                                    <input type="submit" value="Search" class="btn btn-default" />
+                                </div>
+                            </form>
+                        </p>
+                        <% } %>
+                </div>
+            </div>
+
+            <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+                <% museums.forEach(function(museum){ %>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="thumbnail">
+                            <img src="<%= museum.image %>">
+                            <div class="caption">
+                                <h4>
+                                    <%= museum.name %>
+                                </h4>
+                            </div>
+                            <p>
+                                <a href="/museums/<%= museum._id %>" class="btn btn-primary">More Info</a>
+                            </p>
+                        </div>
+                    </div>
+                    <% }); %>
+            </div>
+
+
+            <% include ../partials/footer %>
