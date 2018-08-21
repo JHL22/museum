@@ -16,6 +16,7 @@ Navbar and Form
 Add Mongoose
 
 - Install and configure mongoose
+- Use mLab cloud database
 - Setup Museum model
 - Use Museum model inside of our routes
 
@@ -34,7 +35,7 @@ Comment model
 
 - Display comments on museum show page
 
-###### RESTFUL ROUTES
+##### RESTFUL ROUTES
 
 - INDEX /museums
 - NEW /museums/new
@@ -56,7 +57,7 @@ Style Show Page
 - Add public directory
 - Add custom stylesheet
 
-###### Authentication
+##### Authentication
 
 Add User Model
 
@@ -140,3 +141,14 @@ Flash messages
 
 - Install and configure connect-flash
 - Add bootstrap alerts to header
+
+Google Maps
+
+- Sign up Google Cloud Platform
+- Add Google Maps Geocode API
+
+Homepage
+
+- Background image slider
+- Mobile responsive
+- Fuzzy search function
